@@ -54,8 +54,15 @@
                                 <color key="textColor" red="0.13760541579999999" green="0.0" blue="0.45211823449999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTP-OC-IzN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTP-OC-IzN">
                                 <rect key="frame" x="175" y="301" width="227" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCz-s4-OCR">
+                                <rect key="frame" x="175" y="207" width="245" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -70,6 +77,7 @@
                         <outlet property="ItemTFOutlet" destination="jpr-P3-rFD" id="qU1-dJ-wLX"/>
                         <outlet property="cartOutlet" destination="oPH-1x-Wl5" id="jfU-Vo-tVJ"/>
                         <outlet property="cartTotOutlet" destination="sTP-OC-IzN" id="OOD-gd-zgI"/>
+                        <outlet property="errorOutlet" destination="cCz-s4-OCR" id="Yo0-cg-D6L"/>
                         <outlet property="labelOutlet" destination="Oem-XA-R5H" id="rO0-2b-vHI"/>
                     </connections>
                 </viewController>
