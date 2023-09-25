@@ -75,6 +75,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1n-m2-5Mi">
+                                <rect key="frame" x="183" y="468" width="219" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.1376054157687179" green="0.0" blue="0.45211823453608246" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -85,6 +92,7 @@
                         <outlet property="cartOutlet" destination="oPH-1x-Wl5" id="jfU-Vo-tVJ"/>
                         <outlet property="cartTotOutlet" destination="sTP-OC-IzN" id="OOD-gd-zgI"/>
                         <outlet property="errorItemOutlet" destination="Jle-dE-d7P" id="xhF-nG-tmP"/>
+                        <outlet property="errorMultiOutlet" destination="N1n-m2-5Mi" id="HtM-EM-xYT"/>
                         <outlet property="errorOutlet" destination="cCz-s4-OCR" id="Yo0-cg-D6L"/>
                         <outlet property="labelOutlet" destination="Oem-XA-R5H" id="rO0-2b-vHI"/>
                     </connections>

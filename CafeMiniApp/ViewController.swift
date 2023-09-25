@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var errorItemOutlet: UILabel!
     
+    @IBOutlet weak var errorMultiOutlet: UILabel!
     
     var s2: String = "Cart- "
     var i2 = 0
@@ -49,6 +50,27 @@ class ViewController: UIViewController {
     var cart: [String: Int] = [:]
     
     @IBAction func ButtonAction(_ sender: UIButton) {
+        
+        if menu.contains(ItemTFOutlet.text!.lowercased())
+        {
+            let check = cart.contains{ (key, value) in
+                return key == ItemTFOutlet.text?.lowercased()
+            }
+            if check {
+                errorMultiOutlet.text = "you already added this item"
+            }else
+            {
+                if errorItemOutlet.text == "" && Int(AmtTFOutlet.text!)! >= 1
+                {
+                    cart[ItemTFOutlet.text!] = Int(AmtTFOutlet.text!)
+                    
+                }else if (Int(AmtTFOutlet.text!)! < 1)
+                {
+                    errorOutlet.text = "ERROR INVALID INPUT"
+                }
+            }
+        }
+        
         if AmtTFOutlet.text == ""
         {
             errorOutlet.text = "ERROR INVALID INPUT"
@@ -78,14 +100,7 @@ class ViewController: UIViewController {
             
             
             //  if (Int(AmtTFOutlet.text!)! >= 1)
-            if errorItemOutlet.text == "" && Int(AmtTFOutlet.text!)! >= 1
-            {
-                cart[ItemTFOutlet.text!] = Int(AmtTFOutlet.text!)
-                
-            }else if (Int(AmtTFOutlet.text!)! < 1)
-            {
-                errorOutlet.text = "ERROR INVALID INPUT"
-            }
+           
             
             s2 = "Cart- "
             for (key, value) in cart{
