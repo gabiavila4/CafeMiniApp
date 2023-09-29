@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var labelOutlet: UILabel!
     
@@ -25,8 +25,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var errorMultiOutlet: UILabel!
     
+    @IBOutlet weak var passwordOutlet: UITextField!
+    
+    @IBOutlet weak var newItemOutlet: UITextField!
+    
+    @IBOutlet weak var newPriceOutlet: UITextField!
+    
+    @IBOutlet weak var adminLabelOutlet: UILabel!
+    
+    @IBOutlet weak var indexOutlet: UITextField!
+    
+    var go: Bool = false
     var s2: String = "Cart- "
     var i2 = 0
+    var i3 = 0
     var menu: [String] = ["banana", "apple", "grape", "avocado", "peach"]
     var prices: [Double] = [1.23, 1.32, 0.75, 4.0, 0.90]
     var s: String = "Menu: \n"
@@ -36,7 +48,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-      
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
+        passwordOutlet.resignFirstResponder()
+        newItemOutlet.resignFirstResponder()
+        newPriceOutlet.resignFirstResponder()
+        
         var i = 0
         labelOutlet.text = "hi"
         while i < prices.count {
@@ -47,6 +66,17 @@ class ViewController: UIViewController {
         labelOutlet.text = s
     }
 
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        for textField in self.view.subviews where textField is UITextField {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
+    
     var cart: [String: Int] = [:]
     
     @IBAction func ButtonAction(_ sender: UIButton) {
@@ -85,6 +115,7 @@ class ViewController: UIViewController {
             totBefore = 0
             i2 = 0
             errorItemOutlet.text = ""
+            
             while i2 < menu.count {
                 if (ItemTFOutlet.text == menu[i2])
                 {
@@ -119,6 +150,61 @@ class ViewController: UIViewController {
    
    
    
+    @IBAction func adminAction(_ sender: UIButton) {
+        
+        if (passwordOutlet.text?.lowercased() == "cookie")
+        {
+            go = true
+            adminLabelOutlet.text = "Correct!"
+            
+        }else
+        {
+            go = false
+            adminLabelOutlet.text = "Incorrect Password"
+        }
+        
+        
+    }
+    
+    @IBAction func addAction(_ sender: UIButton) {
+        
+        if go == true{
+            menu.append(newItemOutlet.text!)
+            prices.append(Double( newPriceOutlet.text!)!)
+            
+            s = ""
+            labelOutlet.text = "hi"
+            while i3 < prices.count {
+
+            s = "\(s) \(menu[i3])- $\(prices[i3]) \n"
+                i3 = i3 + 1
+            }
+            labelOutlet.text = s
+           
+            }
+            
+            
+        }
+    
+    
+    @IBAction func deleteAction(_ sender: UIButton) {
+        menu[Int(indexOutlet.text!)!] = ""
+        prices[Int(indexOutlet.text!)!] = 0
+        s = ""
+        labelOutlet.text = "hi"
+        while i3 < prices.count {
+
+        s = "\(s) \(menu[i3])- $\(prices[i3]) \n"
+            i3 = i3 + 1
+        }
+        labelOutlet.text = s
+    }
+    
+    
+    
+    
+    
+    
     
 
 }
